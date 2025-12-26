@@ -10,11 +10,139 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    /* =====================================================================
+     * MACROS (Sequences)
+     * ===================================================================== */
+    macros {
+        /* Types () and moves cursor left: "()" + Left Arrow */
+        m_parens: m_parens {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LPAR &kp RPAR>
+                , <&kp LEFT>;
+        };
+
+        /* Types [] and moves cursor left: "[]" + Left Arrow */
+        m_brackets: m_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LBKT &kp RBKT>
+                , <&kp LEFT>;
+        };
+
+        /* Types {} and moves cursor left: "{}" + Left Arrow */
+        m_braces: m_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LBRC &kp RBRC>
+                , <&kp LEFT>;
+        };
+
+        /* Mac Screenshot: Cmd + Shift + 4 */
+        m_shot: m_shot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI &kp LSHFT>
+                , <&macro_tap &kp N4>
+                , <&macro_release &kp LGUI &kp LSHFT>;
+        };
+    };
+
+    /* =====================================================================
+     * COMBOS (Simultaneous Key Presses)
+     * Key Positions for Corne 42:
+     * L-Top: 0-5    R-Top: 6-11
+     * L-Mid: 12-17  R-Mid: 18-23
+     * L-Bot: 24-29  R-Bot: 30-35
+     * ===================================================================== */
+    combos {
+        compatible = "zmk,combos";
+
+        /* --- NAVIGATION & EDITING --- */
+        
+        /* J + K = ESCAPE */
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <19 20>; 
+            bindings = <&kp ESC>;
+        };
+
+        /* D + F = TAB */
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp TAB>;
+        };
+
+        /* H + J = ENTER */
+        combo_ent {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp RET>;
+        };
+
+        /* K + L = BACKSPACE */
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp BSPC>;
+        };
+
+        /* --- CODING MACROS --- */
+
+        /* S + D = Smart Parens () */
+        combo_parens {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&m_parens>;
+        };
+
+        /* W + E = Smart Brackets [] */
+        combo_brackets {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&m_brackets>;
+        };
+
+        /* X + C = Smart Braces {} */
+        combo_braces {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&m_braces>;
+        };
+
+        /* --- MAC SHORTCUTS --- */
+
+        /* Z + X = CMD + Z (Undo) */
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp LG(Z)>;
+        };
+
+        /* Q + W = CMD + W (Close Window) */
+        combo_close {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LG(W)>;
+        };
+
+        /* A + S = Screenshot (Cmd+Shift+4) */
+        combo_shot {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&m_shot>;
+        };
+    };
+
     /* 
      * CONDITIONAL LAYERS
      * Hold Lower (1) + Raise (2) = Adjust (3)
      */
-
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
