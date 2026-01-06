@@ -1,0 +1,76 @@
+#!/bin/zsh
+# Corne Keyboard Combo Cheat Sheet
+# Usage: corne-cheat or add alias to ~/.zshrc: alias keys="~/path/to/corne-cheat"
+
+# Colors
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+MAGENTA='\033[0;35m'
+WHITE='\033[1;37m'
+DIM='\033[2m'
+RESET='\033[0m'
+BOLD='\033[1m'
+
+# Box drawing
+H_LINE="─"
+V_LINE="│"
+TL="╭"
+TR="╮"
+BL="╰"
+BR="╯"
+
+clear
+
+# Header
+echo ""
+echo "${CYAN}${BOLD}  ╭─────────────────────────────────────────────────────╮${RESET}"
+echo "${CYAN}${BOLD}  │       🎹 CORNE KEYBOARD COMBO CHEAT SHEET 🎹       │${RESET}"
+echo "${CYAN}${BOLD}  ╰─────────────────────────────────────────────────────╯${RESET}"
+echo ""
+
+# Lower Layer Section
+echo "${YELLOW}${BOLD}  ┌─── HOLD LOWER + ─────────────────────────────────────┐${RESET}"
+echo "${YELLOW}  │${RESET}                                                       ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}  ${GREEN}Smart Brackets${RESET} ${DIM}(types pair + cursor inside)${RESET}        ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}                                                       ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}    ${WHITE}U + I${RESET}  →  ${MAGENTA}( )${RESET}   Smart Parens                   ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}    ${WHITE}I + O${RESET}  →  ${MAGENTA}[ ]${RESET}   Smart Brackets                 ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}    ${WHITE}O + P${RESET}  →  ${MAGENTA}{ }${RESET}   Smart Braces                   ${YELLOW}│${RESET}"
+echo "${YELLOW}  │${RESET}                                                       ${YELLOW}│${RESET}"
+echo "${YELLOW}  └─────────────────────────────────────────────────────────┘${RESET}"
+echo ""
+
+# Raise Layer Section
+echo "${CYAN}${BOLD}  ┌─── HOLD RAISE + ─────────────────────────────────────┐${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}  ${GREEN}Mac Shortcuts${RESET}                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}A + S${RESET}  →  ${MAGENTA}⌘⇧4${RESET}     Screenshot                   ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}S + D${RESET}  →  ${MAGENTA}⌘\`${RESET}      Switch Window                ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}Q + W${RESET}  →  ${MAGENTA}⌘W${RESET}      Close Tab                    ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}W + E${RESET}  →  ${MAGENTA}⌘Space${RESET}  Spotlight                    ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}D + F${RESET}  →  ${MAGENTA}⌘Tab${RESET}    App Switcher                 ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}F + G${RESET}  →  ${MAGENTA}⌃↑${RESET}      Mission Control              ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}  ${GREEN}Navigation${RESET}                                          ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}H + J${RESET}  →  ${MAGENTA}⌘←${RESET}      Line Start                   ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}J + K${RESET}  →  ${MAGENTA}⌥←${RESET}      Word Left                    ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}K + L${RESET}  →  ${MAGENTA}⌥→${RESET}      Word Right                   ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}L + ;${RESET}  →  ${MAGENTA}⌘→${RESET}      Line End                     ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}  ${GREEN}Delete${RESET}                                              ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}U + I${RESET}  →  ${MAGENTA}⌥⌫${RESET}      Delete Word                  ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}    ${WHITE}O + P${RESET}  →  ${MAGENTA}⌘⌫${RESET}      Delete to Line End           ${CYAN}│${RESET}"
+echo "${CYAN}  │${RESET}                                                       ${CYAN}│${RESET}"
+echo "${CYAN}  └─────────────────────────────────────────────────────────┘${RESET}"
+echo ""
+
+# Footer
+echo "${DIM}  Layer 2 (Raise) still has individual bracket keys:${RESET}"
+echo "${DIM}  O=( P=) I=[ ;=] <=\{ >=\}${RESET}"
+echo ""
+echo "${DIM}  Tip: Add to ~/.zshrc: alias keys=\"$0\"${RESET}"
+echo ""
